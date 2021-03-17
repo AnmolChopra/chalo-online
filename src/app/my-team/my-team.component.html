@@ -1,0 +1,23 @@
+<div class="body">
+  <div class="head">
+      <h4>My Team</h4>
+  </div>
+  <div class="tablef">
+      <table>
+          <tr class="tableHead">
+              <th>Id</th>
+              <th>Name</th>
+              <th>Sponser Name</th>
+              <th>Joining Date</th>
+              <th>Account Status</th>
+          </tr>
+          <tr class="tablec" *ngFor="let r of resData">
+              <th>{{r.id}}</th>
+              <th>{{r.name}}</th>
+              <th>{{r.sponserName}}</th>
+              <th>{{r.joiningDate}}</th>
+              <th>{{r.status}}</th>
+          </tr>
+      </table>
+  </div>
+</div>

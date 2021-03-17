@@ -1,0 +1,11 @@
+<div>
+  <form [formGroup]="regi" (ngSubmit)="Regi()">
+    <input type="text" name="" id="" placeholder="ID" formControlName="id">
+    <input type="text" placeholder="Name" formControlName="name"><br>
+    <input type="tel" placeholder="Mobile" formControlName="mobile"><br>
+    <input type="text" placeholder="email" formControlName="email"><br>
+    <input type="text" placeholder="sponserId" formControlName="sponserId"><br>
+    <button type="submit">Submit</button>
+  </form>
+  {{Msg}}
+</div>

@@ -1,0 +1,66 @@
+.body{
+    overflow: hidden;
+}
+mat-toolbar{
+    background-color: #3C5EA1;
+    color: white;
+    box-shadow: 5px 5px 10px 0px #888888;
+    position: fixed;
+    opacity: 1;
+}
+
+.example-container {
+  width: 100vw;
+  height: 100vh;
+}
+.example-sidenav {
+  /* padding: 20px; */
+  background-color: #3C5EA1;
+}
+.example-icon {
+  padding: 0 0;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.act{
+    color: red;
+    animation: blink 2s infinite;
+    font-weight: bolder;
+}
+@keyframes blink{
+    0% {color: red;}
+    25% {color: green;}
+    50% {color: red;}
+    75% {color: green;}
+    100% {color: red;}
+}
+
+.drop{
+    margin-left: 20px;
+}
+.pro{
+    background-color: white;
+    color: #3C5EA1;
+    padding: 10px;
+    cursor: pointer;
+}
+.cont{
+    margin: 20px;
+    color: white;
+}
+.cont button mat-icon{
+    margin-right: 5px;
+}
+.img img{
+    height: 40px;
+    width: 40px;
+}
+.logout mat-icon{
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}

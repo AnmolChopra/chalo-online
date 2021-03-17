@@ -1,0 +1,66 @@
+.head{
+    color: #3C5EA1;
+    margin-left: 3vw;
+}
+.body{
+    overflow: hidden;
+    margin-top: 12vh;
+    max-height: 80vh;
+}
+table tr th{
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+.tablef{
+    max-width: 70vw;
+    margin-left: 15vw;
+    overflow-y: scroll;
+    max-height: 88vh;
+}
+.Thead{
+    position: fixed;
+    width: 70vw;
+    max-height: 5vh;
+    text-align: center;
+    background-color: aliceblue;
+    margin-left: -1%;
+}
+.tablef td, th {
+    width: 20%;
+    text-align: center;
+  }
+  ::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: #3d70d6;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #3C5EA1;
+}
+.Tcont{
+    margin-top: 7vh;
+    width: 69vw;
+    max-height: 60vh;
+}
+.controls{
+    width: 70vw;
+    height: auto;
+    margin-left: 15vw;
+    margin-top: 2vh;
+}
+.controls input{
+    width: 30px;
+    cursor: pointer;
+}
+.controls label{
+    cursor: pointer;
+}
+#print-section{
+    display: none;
+}

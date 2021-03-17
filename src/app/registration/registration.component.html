@@ -1,0 +1,409 @@
+<div class="body">
+  <div class="head">
+    <h4 style ="color: #3C5EA1;">Activation Form</h4>
+  </div>
+  <div class="form" >
+    <!-- <h2>Not eligible for Account Opening yet. Contact your Refferer or Dash Back Helpline.</h2> -->
+    <form [formGroup]="detail" (ngSubmit)='form()' *ngIf="Form == true">
+      <div >
+          <h5>Personal Information</h5>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Name" formControlName='name'>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <input matInput  [max]="maxDate" [matDatepicker]="picker" placeholder="Select Date of Birth" formControlName="dob">
+              <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-select placeholder="Gender" formControlName='gender'>
+                  <mat-option value='female'>Female</mat-option>
+                  <mat-option value='male'>Male</mat-option>
+                  <mat-option value='other'>Other</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-select placeholder="Marital Status" formControlName='marital'>
+                  <mat-option value='single'>Single</mat-option>
+                  <mat-option value='married'>Married</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-select placeholder="Occupation Type" formControlName='Occ' >
+                  <mat-option value='private sector'>Private Sector</mat-option>
+                  <mat-option value='public sector'>Public Sector</mat-option>
+                  <mat-option value='government service'>Government Service</mat-option>
+                  <mat-option value='buisness'>Buisness</mat-option>
+                  <mat-option value='Professional'>Professional</mat-option>
+                  <mat-option value='Agriculture'>Agriculture</mat-option>
+                  <mat-option value='Retired'>Retired</mat-option>
+                  <mat-option value='Housewife'>Housewife</mat-option>
+                  <mat-option value='student'>Student</mat-option>
+                  <mat-option value='others'>Others</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field *ngIf="detail.controls.Occ.value == 'others'">
+              <input matInput type="text" placeholder="Please Specify" formControlName='otherOcc'>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="Annual Gross Income" formControlName='income'>
+                <mat-option value='Below 1 Lac'>Below 1 Lac</mat-option>
+                <mat-option value='1-5 Lac'>1-5 Lac</mat-option>
+                <mat-option value='5-10 Lac'>5-10 Lac</mat-option>
+                <mat-option value='10-25 Lac'>10-25 Lac</mat-option>
+                <mat-option value='More than 25 Lac'>More than 25 Lac</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+          <!-- <button mat-button type="button" (click)="next()" [disabled]=" detail.controls.Occ.invalid || detail.controls.marital.invalid" >Next</button> -->
+      </div>
+      <div>
+        <h5>Communication Information</h5>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Mobile No." formControlName='mobile'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="email" formControlName='email'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Address" formControlName='address'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="City/Town/Village" formControlName='city'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="State" formControlName='state'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="tel" placeholder="Pincode" formControlName='pincode' pattern="[0-9]{6}">
+        </mat-form-field>
+      </div>
+      <div>
+        <h5>Family Information</h5>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Father's Name" formControlName='father'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Mother's Name" formControlName='mother'>
+        </mat-form-field>
+      </div>
+      <div>
+        <h5>Legal Information</h5>
+        <mat-form-field>
+          <input matInput type="text"  placeholder="Enter Your Aadhar No." formControlName='aadharNo'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Enter Your PAN  No." formControlName='panNo'>
+        </mat-form-field><br>
+          
+        <mat-form-field>
+          <mat-select placeholder="Select Income Proof" formControlName='incomeProofType' (selectionChange)="incomeP($event.value)">
+              <mat-option value='ITR'>ITR</mat-option>
+              <mat-option value='Bank Statement'>Bank Statement</mat-option>
+              <mat-option value='Salary Slip'>Salary slip</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Select Address Proof" formControlName='addressProf' (selectionChange)="addresP($event.value)">
+              <mat-option value='Passport'>Passport</mat-option>
+              <mat-option value='Driving License'>Driving License</mat-option>
+              <mat-option value='Bank Statement'>Bank Statement</mat-option>
+              <mat-option value='Gas Bill'>Gas Bill</mat-option>
+              <mat-option value='Telephone Bill'>Telephone Bill</mat-option>
+              <mat-option value='Electricity Bill'>Electricity Bill</mat-option>
+              <mat-option value='Ration Card'>Ration Card</mat-option>
+              <mat-option value='Aadhar'>Aadhar with same Address</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+          <button mat-button type="submit"  color="primary">Submit</button> 
+    </form>
+    <div *ngIf="upload == true">
+      <!-- <div class="imgPrev" *ngIf="nextVal == 'aadhar'">
+        <label for=""> Aadhar Card Front</label> <br>
+        <img id="blah" [src]="aadharSrc " alt="Your Aadhar Card Front" /> <br>
+        <input type="file" (change)="aadhar($event)" accept=".jpg,.jpeg,.png"><br>
+        <button mat-button color="primary" (click)="next('Aadhar')">Next</button>
+      </div>
+      <div class="imgPrev" *ngIf="nextVal == 'Aadhar'">
+        <label for=""> Aadhar Card Back</label> <br>
+        <img id="blah" [src]="aadharBackSrc " alt="Your Aadhar Card Back" /> <br>
+        <input type="file" (change)="aadharBack($event)" accept=".jpg,.jpeg,.png"> <br>
+        <button mat-button color="primary" (click)="next('pan')">Next</button>
+      </div>
+      <div class="imgPrev" *ngIf="nextVal == 'pan'">
+        <label for=""> Pan Card</label> <br>
+        <img id="blah" [src]="panSrc " alt="Your Pan Card" /> <br>
+        <input type="file" (change)="pan($event)" accept=".jpg,.jpeg,.png"> <br>
+        <button mat-button color="primary" (click)="next('photo')">Next</button>
+      </div>
+      <div class="imgPrev" *ngIf="nextVal == 'photo'">
+        <label for=""> Your Photo</label> <br>
+        <img id="blah" [src]="photoSrc" alt="Your Photo" /> <br>
+        <input type="file" (change)="photo($event)" accept=".jpg,.jpeg,.png"> <br>
+        <button mat-button color="primary" (click)="next('sign')">Next</button>
+      </div>
+      <div class="imgPrev" *ngIf="nextVal == 'sign'">
+        <label for=""> Your Signature</label> <br>
+        <img id="blah" [src]="signSrc" alt="Your sign" /> <br>
+        <input type="file" (change)="sign($event)" accept=".jpg,.jpeg,.png"> <br>
+        <button mat-button color="primary" (click)="next('accountProf')">Next</button>
+      </div>
+      <div class="imgPrev" *ngIf="nextVal == 'accountProf'">
+        <label for="">Upload your Cheque/Passbook </label> <br>
+        <img id="blah" [src]="bankSrc " alt="Your Cheque/Passbook" /> <br>
+        <input type="file" (change)="bank($event)" accept=".jpg,.jpeg,.png"> <br>
+        <button mat-button color="primary" (click)="next('incomeProf')">Next</button>
+      </div>
+      <div class="imgPrev" *ngIf="nextVal == 'incomeProf'">
+        <label for="">Upload your {{incomeName}} </label> <br>
+        <object [data]="incomeproofSrc" type="application/pdf">
+          <embed [src]="incomeproofSrc" type="application/pdf">
+        </object>
+        <img id="blah" [src]="incomeproofSrc " alt="Your {{incomeName}}" /> <br>
+        <input type="file" (change)="incomeProf($event)" accept=".pdf"> <br>
+        <button mat-button color="primary" (click)="next('addressProf')">Next</button>
+      </div>
+      <div class="imgPrev" *ngIf="nextVal == 'addressProf'">
+        <label for="">Upload your {{addressProfName}} </label> <br>
+        <img id="blah" [src]="addresproofSrc " alt="Your {{addressProfName}}" /> <br>
+        <input type="file" (change)="addressProf($event)" accept=".jpg,.jpeg,.png,.pdf"> <br>
+        <button mat-button color="primary" (click)="next('fromPrev')">Next</button>
+      </div> -->
+      <div *ngIf="nextVal == 'fromPrev'">
+        <h1>Form Preview</h1>
+        <label for="">Name : </label>
+        <label for="">{{Name}}</label><br>
+        <label for="">Mobile : </label>
+        <label for="">{{mobile}}</label><br>
+        <label for="">Email : </label>
+        <label for="">{{email}}</label><br>
+        <label for="">Gender : </label>
+        <label for="">{{resData.name}}</label><br>
+        <label for="">Annual gross Income : </label>
+        <label for="">{{grossIncome}}</label><br>
+        <label for="">Occupation : </label>
+        <label for="">{{occupation}} {{other}}</label><br>
+        <label for="">Mother's Name: </label>
+        <label for="">{{mother}}</label><br>
+        <label for="">Father/Spouse Name : </label>
+        <label for="">{{father}}</label><br>
+        <label for="">Aadhar No. : </label>
+        <label for="">{{aadharNo}}</label><br>
+        <!-- <label for="">Aadhar Front</label><br>
+        <img id="blah" [src]="aadharSrc " alt="Your Aadhar Card Front" /> <br>
+        <label for="">Aadhar Back</label><br>
+        <img id="blah" [src]="aadharBackSrc " alt="Your Aadhar Card Back" /> <br> -->
+        <label for="">Pan No. : </label>
+        <label for="">{{panNo}}</label><br>
+        <label for="">Income Proof : </label>
+       
+      </div>
+      <div>
+        <div >
+          <form [formGroup]="pakage" (ngSubmit)="pkgSub()">
+            <input type="tel" formControlName="pkg">
+            <button type="submit">Click</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="body">
+<div class="head">
+    <h4>Account Opening Form</h4>
+</div>
+<div class="form">
+    <span>{{Msg}}</span>
+    <span>{{LoginId}}</span>
+    <div >
+    <mat-accordion class='example-headers-align'>
+    <form [formGroup]="detail" (ngSubmit)='form()'>
+      <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              Personal Information
+          </mat-panel-title>
+          <mat-panel-description>
+              Type Your Personal Info
+              <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field class="example-full-width">
+              <input matInput  [max]="maxDate" [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dob">
+              <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <br>
+          <mat-form-field>
+            <mat-select placeholder="Gender" formControlName='gender'>
+                <mat-option value='female'>Female</mat-option>
+                <mat-option value='male'>Male</mat-option>
+                <mat-option value='other'>Other</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Marital Status" formControlName='marital'>
+              <mat-option value='single'>Single</mat-option>
+              <mat-option value='married'>Married</mat-option>
+          </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Annual Gross Income" formControlName='income'>
+            <mat-option value='Below 1 Lac'>Below 1 Lac</mat-option>
+            <mat-option value='1-5 Lac'>1-5 Lac</mat-option>
+            <mat-option value='5-10 Lac'>5-10 Lac</mat-option>
+            <mat-option value='10-25 Lac'>10-25 Lac</mat-option>
+            <mat-option value='More than 25 Lac'>More than 25 Lac</mat-option>
+        </mat-select>
+    </mat-form-field>
+          <mat-form-field>
+              <mat-select placeholder="Occupation Type" formControlName='Occ' (change)="other($event.target.value)">
+                  <mat-option value='private sector'>Private Sector</mat-option>
+                  <mat-option value='public sector'>Public Sector</mat-option>
+                  <mat-option value='government service'>Government Service</mat-option>
+                  <mat-option value='buisness'>Buisness</mat-option>
+                  <mat-option value='Professional'>Professional</mat-option>
+                  <mat-option value='Agriculture'>Agriculture</mat-option>
+                  <mat-option value='Retired'>Retired</mat-option>
+                  <mat-option value='Housewife'>Housewife</mat-option>
+                  <mat-option value='student'>Student</mat-option>
+                  <mat-option value='others'>Others</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field *ngIf='OccuO == true'>
+              <input matInput type="text" placeholder="Please Specify" formControlName='otherOcc'>
+          </mat-form-field><br>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Address" formControlName='address'>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="City/Town/Village" formControlName='city'>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="State" formControlName='state'>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="tel" placeholder="Pincode" formControlName='pincode' pattern="[0-9]{6}">
+          </mat-form-field><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                  Family Information
+              </mat-panel-title>
+              <mat-panel-description>
+                  Enter Your Family Info
+                  <mat-icon>account_circle</mat-icon>
+              </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-form-field>
+                  <input matInput type="text" placeholder="Father's Name" formControlName='father'>
+              </mat-form-field><br>
+              <mat-form-field>
+                  <input matInput type="text" placeholder="Mother's Name" formControlName='mother'>
+              </mat-form-field><br>
+            </mat-expansion-panel>
+        <mat-expansion-panel  hideToggle>
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Legal Details
+                  </mat-panel-title>
+                  <mat-panel-description>
+                      Enter Aadhar and Pan no.
+                      <mat-icon>subtitles</mat-icon>
+                  </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-form-field>
+                  <input matInput type="text"  placeholder="Enter Your Aadhar No." formControlName='aadharNo'>
+              </mat-form-field>
+              <mat-form-field>
+                  <input matInput type="text" placeholder="Enter Your PAN  No." formControlName='panNo'>
+              </mat-form-field><br>
+                
+              <mat-form-field>
+                <mat-select placeholder="Select Income Proof" formControlName='incomeProofType' (change)="incomeP($event.target.value)">
+                    <mat-option value='ITR'>ITR</mat-option>
+                    <mat-option value='Bank Statement'>Bank Statement</mat-option>
+                    <mat-option value='Salary Slip'>Salary slip</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-select placeholder="Select Address Proof" formControlName='addressProf' (change)="addresP($event.target.value)">
+                  <mat-option value='Passport'>Passport</mat-option>
+                  <mat-option value='Driving License'>Driving License</mat-option>
+                  <mat-option value='Bank Statement'>Bank Statement</mat-option>
+                  <mat-option value='Gas Bill'>Gas Bill</mat-option>
+                  <mat-option value='Telephone Bill'>Telephone Bill</mat-option>
+                  <mat-option value='Electricity Bill'>Electricity Bill</mat-option>
+                  <mat-option value='Ration Card'>Ration Card</mat-option>
+                  <mat-option value='Aadhar'>Aadhar with same Address</mat-option>
+              </mat-select>
+          </mat-form-field><br>
+        </mat-expansion-panel>
+        <mat-action-row>
+              <button mat-button type="submit" [disabled]="!detail.valid" color="primary">Submit</button>
+        </mat-action-row>
+    </form>
+    <span>{{Msg}}</span>
+    <span>{{LoginId}}</span>
+  </mat-accordion>
+  </div>
+  <div *ngIf="formView == true">
+    <h1>Form Preview</h1>
+    <label for="">Name : </label>
+    <label for="">{{Name}}</label><br>
+    <label for="">Mobile : </label>
+    <label for="">{{mobile}}</label><br>
+    <label for="">Email : </label>
+    <label for="">{{email}}</label><br>
+    <label for="">Gender : </label>
+    <label for="">{{gender}}</label><br>
+    <label for="">Annual gross Income : </label>
+    <label for="">{{grossIncome}}</label><br>
+    <label for="">Occupation : </label>
+    <label for="">{{occupation}} {{other}}</label><br>
+    <label for="">Mother's Name: </label>
+    <label for="">{{mother}}</label><br>
+    <label for="">Father/Spouse Name : </label>
+    <label for="">{{father}}</label><br>
+    <label for="">Aadhar No. : </label>
+    <label for="">{{aadharNo}}</label><br>
+    <label for="">Pan No. : </label>
+    <label for="">{{panNo}}</label><br>
+    <label for="">Income Proof : </label>
+    <label for=""></label><br>
+    <button (click)="next()">Submit</button>
+  </div>
+  <div *ngIf="upload == true">
+    Upload
+    <label for="">Upload Aadhar Card Front</label> <br>
+    <img id="blah" [src]="aadharSrc " alt="Your Aadhar Card Front" /> <br>
+    <input type="file" (change)="aadhar($event)"> <br>
+    <label for="">Upload Aadhar Card Back</label> <br>
+    <img id="blah" [src]="aadharBackSrc " alt="Your Aadhar Card Back" /> <br>
+    <input type="file" (change)="aadharBack($event)"> <br>
+    <label for="">Upload Pan Card</label> <br>
+    <img id="blah" [src]="panSrc " alt="Your Pan Card" /> <br>
+    <input type="file" (change)="pan($event)"> <br>
+    <label for="">Upload your Photo</label> <br>
+    <img id="blah" [src]="photoSrc" alt="Your Photo" /> <br>
+    <input type="file" (change)="photo($event)"> <br>
+    <label for="">Upload your signature</label> <br>
+    <img id="blah" [src]="signSrc" alt="Your sign" /> <br>
+    <input type="file" (change)="sign($event)"> <br>
+    <label for="">Upload your Cheque/Passbook </label> <br>
+    <img id="blah" [src]="bankSrc " alt="Your Cheque/Passbook" /> <br>
+    <input type="file" (change)="bank($event)"> <br>
+    <label for="">Upload your {{incomeName}} </label> <br>
+    <img id="blah" [src]="incomeproofSrc " alt="Your {{incomeName}}" /> <br>
+    <input type="file" (change)="incomeProf($event)"> <br>
+    <label for="">Upload your {{addressProfName}} </label> <br>
+    <img id="blah" [src]="addresproofSrc " alt="Your {{addressProfName}}" /> <br>
+    <input type="file" (change)="addressProf($event)"> <br>
+  </div>
+</div>
+</div> -->

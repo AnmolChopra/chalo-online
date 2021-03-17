@@ -1,0 +1,26 @@
+<div class="body">
+        <div class="bg-img">
+            <h1 style="color: white; text-align: center; cursor: pointer;" routerLink="/">WELCOME TO CHALO ONLINE
+            </h1>
+            <img src="../../assets/login-regi.png" alt="" >
+        </div>
+        <!-- login panel  -->
+        <div class="login-design" *ngIf="loginD == true">
+            <h1>USER LOGIN</h1>
+            <p>WELCOME BACK</p>
+            <span [ngClass]="{'msg-error':Error == true, 'msg-style' : Error == false}">{{Msg}}</span>
+            <!-- form tag -->
+            <form class="login-input" [formGroup]='login' (ngSubmit)='loginf()' *ngIf="log == true">
+                <mat-form-field class="mat-form-field-style">
+                    <input matInput type="text" placeholder="Login ID" formControlName='mobile'>
+                </mat-form-field><br>
+                <mat-form-field class="mat-form-field-style">
+                    <input matInput type="password" placeholder="Password" formControlName='password'>
+                </mat-form-field><br>
+                <!-- Login Button -->
+                <button mat-stroked-button color='white' type="submit" style=" margin-top: 8%; margin-bottom: 5%;" [disabled]="!login.valid">Login</button> <br>
+                <label (click)='Forgot()' style="cursor: pointer;">Forgot Password</label> <br>
+                <label (click)='register()' style="cursor: pointer;">Not Registered <br> Yet?</label>
+            </form>
+        </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="body">
+  <div class="head">
+      <h4>Send Free Link</h4>
+  </div>
+  <div class="form">
+    <input matInput type="text"  value="{{link}}" #userinput >
+    <button mat-raised-button (click)="copyInputMessage(userinput)" value="click to copy" >Copy</button>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+.body{
+    padding: 10px;
+    margin-top: 10vh;
+}
+.cont{
+    margin: 30px;
+}
+.cont mat-grid-list{
+    margin: 10px;
+    display: block;
+}
+.cont mat-grid-list mat-grid-tile{
+    /* border: black 1px solid; */
+    padding: 5px;
+    height: 95%;
+}
+.cont mat-grid-list mat-grid-tile div{
+    /* border: black 1px solid; */
+    width: 95%;
+    height: 90%;
+    margin: 5px;
+    padding: 10px;
+    color: #3C5EA1;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 3px 20px -5px #3C5EA1;
+    position: absolute;
+}
+.cont mat-grid-list mat-grid-tile div mat-icon{
+    font-size: 80px;
+    position: absolute;
+    margin-left: 55%;
+    margin-top: 10%;
+}
+.cont mat-grid-list mat-grid-tile div h2{
+    position: relative;
+}
+.cont mat-grid-list mat-grid-tile div h3{
+    position: relative;
+}
+.cont-phone{
+    margin: 0;
+    width: 95vw;
+    height: 90vh;
+    position: relative;
+    display: none;
+}
+.cont-phone div{
+    width: 80%;
+    height: 150px;
+    margin: 10px 0 25px 10%;
+    padding: 10px;
+    color: #3C5EA1;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 2px 1px 6px 0px #3C5EA1;
+    position: relative;
+}
+.cont-phone div mat-icon{
+    font-size: 70px;
+    position: absolute;
+    margin-left: 70%;
+    margin-top: 0%;
+}
+@media only screen and (max-width: 786px) {
+    .body{
+        margin-top: 7vh;
+    }
+    .cont-phone{
+        display: block;
+    }
+    .cont{
+        display: none;
+    }
+}

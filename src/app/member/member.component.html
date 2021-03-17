@@ -1,0 +1,91 @@
+<div class="body">
+    <div class="head">
+        <h1>Member</h1>
+    </div>
+    <div class="form">
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="Search By Id" (click)="clear()">
+              <div class="box mat-elevation-z4">
+                <form [formGroup]='userId' (ngSubmit)="id()">
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Enter User Id" formControlName='id'>
+                    </mat-form-field><br>
+                    <button mat-button type="submit" [disabled]='!userId.valid'>Search</button>
+                </form>
+              </div>
+            </mat-tab>
+            <mat-tab label="Mobile No." (click)="clear()">
+              <div class="box mat-elevation-z4">
+                  <form [formGroup]='mobile' (ngSubmit)="mob()">
+                      <mat-form-field>
+                          <input matInput type="tel" placeholder="Enter Mobile No." formControlName='mobile'>
+                      </mat-form-field><br>
+                      <button mat-button type="submit" [disabled]='!mobile.valid'>Search</button>
+                  </form>
+              </div>
+            </mat-tab>
+            <mat-tab label="Welcome Call list" (click)="clear()">
+              <div class="box mat-elevation-z4">
+                    <div class="tablef">
+                        <table>
+                            <tr class="tableHead">
+                                <th>ID</th>
+                                <th>Name</th>
+                            </tr>
+                            <tr class="tablec" *ngFor="let r of resData">
+                                <th>{{r.id}}</th>
+                                <th>{{r.name}}</th>
+                                <th><button mat-raised-button color="primary" (click)="det(r.id)">Call</button></th>
+                            </tr>
+                        </table>
+                    </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Account Opening List">
+              <div class="box mat-elevation-z4">
+                    <div class="tablef">
+                        <table>
+                            <tr class="tableHead">
+                                <th>ID</th>
+                                <th>Name</th>
+                            </tr>
+                            <tr class="tablec" *ngFor="let a of accData">
+                                <th>{{a.id}}</th>
+                                <th>{{a.name}}</th>
+                                <th><button mat-raised-button color="primary" (click)="det(a.id)">Call</button></th>
+                            </tr>
+                        </table>
+                    </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Raise Query" (click)="clear()">
+                <div class="box mat-elevation-z4">
+                       
+                </div>
+            </mat-tab>
+            <mat-tab label="Regenrate Password" (click)="clear()">
+                <div class="box mat-elevation-z4">
+                    <div *ngIf="gen == false">
+                        <form [formGroup]='mobile' (ngSubmit)="mob1()" >
+                            <mat-form-field>
+                                <input matInput type="tel" placeholder="Enter Mobile No." formControlName='mobile'>
+                            </mat-form-field><br>
+                            <button mat-button type="submit" [disabled]='!mobile.valid'>Search</button>
+                        </form>
+                    </div>
+                    <div *ngIf="gen == true">
+                        <span>Id: {{Id}}</span><br>
+                        <span>Name: {{Name}}</span><br>
+                        <span>Mobile: {{mobile}}</span><br>
+                        <span>Email: {{email}}</span><br>
+                        <span>Sponser Name: {{Sponser}}</span><br>
+                        <span>Sponser Id: {{SponserId}}</span><br>
+                        <span>Account Status: {{stat}}</span><br>
+                        <button mat-button (click)="Gen()">Genrate Password</button>
+                        <span>{{Msg}}</span>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+  </div>

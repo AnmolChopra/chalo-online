@@ -1,0 +1,41 @@
+.div
+{
+    margin: 0px;
+    font-family: Arial, sana-serif
+}
+.topnav
+{
+    overflow:hidden;
+    background-color: blue;
+}
+.topnav a
+{
+    float: left;
+    color: cadetblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.topnav a:hover
+{
+    background-color: cornflowerblue;
+    color: white;
+}
+*
+{
+    box-sizing: border-box;
+}
+.column
+{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+}
+.row
+{
+    content: none;
+    display: table;
+    clear: both;
+}

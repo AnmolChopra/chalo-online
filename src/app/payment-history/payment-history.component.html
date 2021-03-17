@@ -1,0 +1,62 @@
+<div class="body">
+    <div class="head">
+        <h4>Payment History</h4>
+    </div>
+        <div class="tablef">
+            <table>
+                <tr class="Thead">
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Transaction Type</th>
+                    <th>Last Balance</th>
+                    <th>Remarks</th>
+                </tr>
+                <div class="Tcont">
+                    <tr *ngFor='let r of printP' >
+                        <td>{{r.date | date:'dd MMM yyyy hh:mm'}}</td>
+                        <td>{{r.amt}}</td>
+                        <td>{{r.tranT}}</td>
+                        <td>{{r.lastBal}}</td>
+                        <td>{{r.remark}}</td>
+                    </tr>
+                </div>
+            </table>
+        </div>
+    <div class="controls">
+            <select (change)="other($event.target.value)">
+                <option value='10' selected>10</option>
+                <option value='20'>20</option>
+                <option value='30'>30</option>
+                <option value='50'>50</option>
+                <option value='100'>100</option>
+            </select>
+            <label for=""(click)="prevPage()"> Previous Page </label>
+            <label for=""><input type="text" value={{pageVal}} (change)="changePage($event.target.value)"> of {{arraySplit?.length }} </label>
+            <label for=""(click)="nextPage()"> Next Page </label>
+            <label for="" (click)="printAble()">Print</label>
+    </div>
+    <div id="print-section">
+        <div class="tablef">
+            <table>
+                <tr class="Thead">
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Transaction Type</th>
+                    <th>Last Balance</th>
+                    <th>Remarks</th>
+                </tr>
+                <div class="Tcont">
+                    <tr *ngFor='let r of resObj' >
+                        <td>{{r.index}}</td>
+                        <td>{{r.date | date:'dd MMM yyyy hh:mm'}}</td>
+                        <td>{{r.amt}}</td>
+                        <td>{{r.tranT}}</td>
+                        <td>{{r.lastBal}}</td>
+                        <td>{{r.remark}}</td>
+                    </tr>
+                </div>
+            </table>
+        </div>
+    </div>
+</div>

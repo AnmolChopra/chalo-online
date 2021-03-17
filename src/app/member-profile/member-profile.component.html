@@ -1,0 +1,70 @@
+<div class="body">
+    <div class="head">
+        <h1>Profile</h1>
+    </div>
+    <div class="form">
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="Personal Information">
+              <div class="box mat-elevation-z4">
+                <form [formGroup]='personalInfo' (ngSubmit)="pers()">
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Enter Your Full Name" formControlName='name'>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <input matInput type="text"  placeholder="Enter Your Email Id" formControlName='email'>
+                    </mat-form-field><br>
+                    <button mat-button type="submit">Update</button>
+                </form>
+              </div>
+            </mat-tab>
+            <mat-tab label="Password">
+              <div class="box mat-elevation-z4">
+                  <form [formGroup]='password' (ngSubmit)="pass()">
+                      <mat-form-field>
+                          <input matInput type="password" placeholder="Enter Your Old Password" formControlName='oldPass' (keyup)='findPass()'>
+                      </mat-form-field><br>
+                      <mat-form-field>
+                          <input matInput type="password" placeholder="Enter Your New Password" formControlName='newPass'>
+                      </mat-form-field><br>
+                      <!-- <mat-form-field>
+                          <input matInput type="password"  placeholder="Re-enter Your New Password" >
+                      </mat-form-field><br> -->
+                      <button mat-button type="submit" [disabled]='!password.valid'>Update</button>
+                  </form>
+              </div>
+            </mat-tab>
+            <mat-tab label="Account Details">
+              <div class="box mat-elevation-z4">
+                  <form [formGroup]='acc' (ngSubmit)="accDet()">
+                      <mat-form-field>
+                          <input matInput type="text" placeholder="Enter Your Account No." formControlName='accNo'>
+                      </mat-form-field><br>
+                      <mat-form-field>
+                          <input matInput type="text" placeholder="Enter Your IFSC Code" formControlName='ifsc'>
+                      </mat-form-field><br>
+                      <mat-form-field>
+                          <input matInput type="text"  placeholder="Enter Your Account Name" formControlName='accName'>
+                      </mat-form-field><br>
+                      <button mat-button type="submit" [disabled]='!acc.valid'>Update</button>
+                  </form>
+              </div>
+            </mat-tab>
+            <mat-tab label="Legal Information">
+              <div class="box mat-elevation-z4">
+                  <form [formGroup]='legal' (ngSubmit)="legalDet()">
+                      <mat-form-field>
+                          <input matInput type="tel" placeholder="Aadhar No" formControlName='aadhar'>
+                      </mat-form-field><br>
+                      <mat-form-field>
+                          <input matInput type="text" placeholder="Pan No" formControlName='pan'>
+                      </mat-form-field><br>
+                      <button mat-button type="submit" [disabled]='!legal.valid'>Update</button>
+                  </form>
+              </div>
+            </mat-tab>
+            
+            
+            <span>{{Msg}}</span>
+        </mat-tab-group>
+    </div>
+  </div>

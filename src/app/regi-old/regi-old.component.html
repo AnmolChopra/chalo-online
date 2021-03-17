@@ -1,0 +1,39 @@
+<div class="body">
+      <div class="login-design">
+          <h1>USER REGISTERATION
+          </h1>
+          <div class="form">
+              <span [ngClass]="{'msg-error':Error == true, 'msg-style' : Error == false}">{{Msg}}</span>
+              <mat-accordion class='example-headers-align'>
+                  <form class="login-input" [formGroup]='detail' (ngSubmit)='members()'>
+                    <mat-form-field class="mat-form-field-style">
+                      <input matInput type="text" placeholder="User ID" formControlName='id'>
+                  </mat-form-field>
+                      <mat-form-field class="mat-form-field-style">
+                          <input matInput type="text" placeholder="Name" formControlName='name'>
+                      </mat-form-field><br>
+                      <mat-form-field class="mat-form-field-style">
+                          <input matInput type="email" placeholder="Email" formControlName='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                      </mat-form-field><br>
+                      <mat-form-field class="mat-form-field-style">
+                          <input matInput type="phone" placeholder="Mobile No." formControlName='mobile' pattern="[0-9]{10}">
+                      </mat-form-field><br>
+                      <!-- sponser details -->
+                      <div class="sponser-input" >
+                          <mat-form-field>
+                              <input matInput type="text" placeholder='Sponser Id' formControlName='sponserId' (keyup)="fetch($event.target.value)">
+                          </mat-form-field>
+                          <mat-form-field>
+                              <input matInput type="text" placeholder="Sponser Name" formControlName='sponserName'>
+                          </mat-form-field>
+                      </div>
+                      <div class="buttons">
+                          <!-- Register button  -->
+                          <button mat-stroked-button color='white' type="submit" style=" margin-top: 8%; margin-bottom: 5%;" disabled>Register</button>
+                          <br>
+                      </div>
+                  </form>
+              </mat-accordion>
+          </div>
+      </div>
+</div>

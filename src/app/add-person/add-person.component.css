@@ -1,0 +1,66 @@
+.body{
+    position: absolute;
+    margin-top: 1%;
+    width: 100%;
+    height: 100%;
+    background-color: #ECF0F5;
+}
+.head{
+    font-size: 20px;
+}
+table{
+    border-bottom: 1px solid black;
+}
+.tablef{
+    padding: 3%;
+    background-color: #E8E8E8;
+    border-radius: 5px;
+    width: 90%;
+    height: 65%;
+    overflow: scroll;
+}
+.tableHead{
+    font-size: 20px;
+    margin: 50px;
+    background-color: #2C3B41;
+    color: white;
+    font-weight: 100;
+}
+.tableHead th{
+    width: 180px;
+}
+.tablec{
+    background-color: whitesmoke;
+}
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+@media only screen and (max-width: 600px) {
+    .body {
+        height: 830px;
+        width: 100%;
+    }
+    .tableHead{
+        font-size: 12px;
+        margin: 10px;
+    }
+    .tableHead th{
+        width: 120px;
+        font-size: 12px;
+    }
+    .tablec{
+        font-size: 12px;
+    }
+    .head{
+        font-size: 15px;
+    }
+  }

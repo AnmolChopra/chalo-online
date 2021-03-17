@@ -1,0 +1,72 @@
+<div class="body">
+  <div class="head">
+      <h1>Join Member</h1>
+  </div>
+  <div class="form">
+      <span>{{Msg}}</span>
+      <span>{{LoginId}}</span>
+      <mat-accordion class='example-headers-align'>
+      <form [formGroup]="detail" (ngSubmit)='members()'>
+        <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Personal Information
+            </mat-panel-title>
+            <mat-panel-description>
+                Type Your Personal Info
+                <mat-icon>account_circle</mat-icon>
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-form-field>
+                <input matInput type="text" placeholder="Enter Your Full Name" formControlName='name'>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="tel" placeholder="Enter Your Mobile No." formControlName='mobile'>
+            </mat-form-field><br>
+            <mat-form-field>
+                <input matInput type="text"  placeholder="Enter Your Email Id" formControlName='email'>
+            </mat-form-field>
+          </mat-expansion-panel>
+          <mat-expansion-panel  hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Sponser Information
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Check Information
+                        <mat-icon>person</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field>
+                    <input matInput type="text" [disabled] placeholder='Sponser Id' formControlName='sponserId'>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="text" [disabled] placeholder="Sponser Name" formControlName='sponserName'>
+                </mat-form-field>
+          </mat-expansion-panel>
+          <mat-expansion-panel  hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Legal Details
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Enter Aadhar and Pan no.
+                        <mat-icon>subtitles</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field>
+                    <input matInput type="text"  placeholder="Enter Your Aadhar No." formControlName='aadhar'>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Enter Your PAN  No." formControlName='pan'>
+                </mat-form-field>
+          </mat-expansion-panel>
+          <mat-action-row>
+                <button mat-button type="submit" [disabled]="!detail.valid" color="primary">Submit</button>
+            </mat-action-row>
+      </form>
+      <span>{{Msg}}</span>
+      <span>{{LoginId}}</span>
+    </mat-accordion>
+  </div>
+</div>

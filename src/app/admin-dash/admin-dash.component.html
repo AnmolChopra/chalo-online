@@ -1,0 +1,30 @@
+<div class="body">
+    <div class="logo">
+            <img src="../../assets/dashback website top.png" alt="">
+        <button mat-icon-button class="name">
+            <mat-icon>account_circle</mat-icon>
+            <span>Admin</span>
+        </button>
+    </div>
+  </div>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon class="menu">menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+          <mat-icon>emoji_events</mat-icon>
+          <span routerLink='payout'>Payout</span>
+      </button>
+      <button mat-menu-item>
+          <mat-icon>account_circle</mat-icon>
+          <span routerLink='member'>Members</span>
+      </button>
+      <button mat-menu-item>
+          <mat-icon>arrow_forward</mat-icon>
+          <span (click)='signOut()'>Sign Out</span>
+      </button>
+      <!-- <button mat-menu-item (click)="Click()">Click</button> -->
+  </mat-menu>
+
+  
+<router-outlet></router-outlet>

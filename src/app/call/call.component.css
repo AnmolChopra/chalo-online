@@ -1,0 +1,26 @@
+.body{
+    margin-left: 5%;
+    padding-bottom: 50px;
+}
+mat-radio-button{
+    margin-left: 15px;
+}
+label{
+    margin-bottom: 50px;
+}
+.ans{
+    background-color: greenyellow;
+    width: auto;
+    height: auto;
+}
+.up{
+    padding: 10px;
+    background-color: rgb(24, 218, 24);
+    width: fit-content;
+    color: white;
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid green;
+    font-weight: 900;
+    font-size: 20px;
+}

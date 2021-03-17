@@ -1,0 +1,361 @@
+.body{
+    width: 100vw;
+    height: auto;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+button:active,
+button:focus{
+  border: none;
+}
+.header mat-toolbar{
+    background-color: white;
+    box-shadow: 7px 1px 10px 0px #888888;
+    position: fixed;
+}
+.header mat-toolbar mat-toolbar-row span{
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    margin-top: -10px;
+}
+.header mat-toolbar mat-toolbar-row span img{
+    width: 100%;
+    height: 100%;
+}
+.header mat-toolbar mat-toolbar-row h1{
+  font-size: xx-large;
+  font-weight: bolder;
+  color: #3c5ea1;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.menu li {
+  float: left;
+}
+
+.menu li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  cursor: pointer;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .cont{
+    position: static;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+  }
+#land{
+    margin-top: 10vh;
+    height: 90vh;
+    width: 98vw;
+}
+.land-bannerWarp{
+  width: 50%;
+  margin-left: 5vw;
+  padding-top: 30px;
+}
+.land-bannerWarp h1{
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+#land img{
+    float: right;
+    margin-right: 10px;
+}
+.example-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+    color: #3c5ea1;
+  }
+.menu-icon{
+    color: #3c5ea1;
+    display: none;
+}
+#why-us{
+  margin-top: 10vh;
+  height: auto;
+  width: 97vw;
+  margin-bottom: 5vh;
+  text-align: center;
+  position: static;
+}
+#why-us h1{
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bolder;
+}
+#why-us button{
+  margin-top: 3vh;
+  background-color: white;
+  color: #3c5ea1;
+  border:1px solid #888888;
+  padding: 10px;
+  border-radius: 5px;
+}
+.card {
+  margin-top: 3vh;
+  position: static;
+  display: inline-block;
+  padding-left: 50px;
+}
+.cardwrap{
+  width: 23vw;
+  float: left;
+}
+.inner{
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  position: static;
+  box-shadow: 0px 0px 10px 0px #888888;
+  margin: 10px;
+}
+.inner img{
+  width: 180px;
+  height: 180px;
+  margin-left: 35px;
+  margin-top: 10px;
+}
+.strech img{
+  width: 230px;
+  margin-left: 10px;
+}
+.inner p{
+  margin-top: 15px;
+  text-align: center;
+}
+#reward{
+  width: 98vw;
+  height: 90vh;
+  position: static;
+  /* margin-top: 5vh; */
+  overflow: hidden;
+}
+.reText{
+  width: 45vw;
+  padding-left: 5vw;
+  margin-top: 5vh;
+  float: left;
+}
+.reText h1{
+  font-weight: bolder;
+}
+/* .reText p{
+  width: 45vw;
+} */
+.reText button{
+  background-color: #3c5ea1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+.reImg{
+  height: 60vh;
+  width: 50vw;
+  float: right;
+  margin-top: 25vh;
+}
+.reImg img{
+  width: 100%;
+  height: 100%;
+}
+#MobileApp{
+  height: 90vh;
+  width: 98vw;
+  margin-top: 5vh;
+  position: static;
+}
+.mobileText{
+  width: 45vw;
+  height: 90vh;
+  float: left;
+  padding-left: 10vw;
+  padding-top: 25vh;
+}
+.mobileImg{
+  width: 45vw;
+  height: 90vh;
+  float: left;
+  padding-top: 15vh;
+}
+.mobileImg img{
+  height: 400px;
+  width: 400px;
+  margin-left: 15vw;
+}
+#account{
+  height: 90vh;
+  width: 98vw;
+  padding-top: 3vh;
+  text-align: center;
+  position: static;
+}
+#account h1{
+  font-weight: bolder;
+}
+#account button{
+  background-color: #3c5ea1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+.accCard{
+  height: 60vh;
+  width: 100%;
+  display: inline-block;
+  padding-left: 4vw;
+  padding-top: 3vh;
+}
+.accCardWrap{
+  width: 23vw;
+  float: left;
+}
+.accInner{
+  height: 280px;
+  width: 280px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px 2px #888888;
+}
+.accInner img{
+  height: 200px;
+  width: 200px;
+  margin-left: 25px;
+}
+.accInner p{
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+.accStrech img{
+  width: 230px;
+  margin-left: 15px;
+}
+@media screen and (min-width: 300px) and (orientation: portrait){
+  .menu{
+    display: none;
+  }
+  .menu-icon{
+    display: block;
+  }
+  .header mat-toolbar mat-toolbar-row span{
+    width: 20px;
+    height: 20px;
+    margin-top: -15px;
+  }
+  .header mat-toolbar mat-toolbar-row h1{
+    font-size: larger;
+  }
+  .land-bannerWarp{
+    width: 70%;
+    margin-left: 15%;
+  }
+  #land{
+    margin-top: 5vh;
+  }
+  #land img{
+    margin-top: 15vh;
+    width: 92vw;
+    height: 30vh;
+    margin-right: 5px;
+  }
+  #why-us{
+    margin-top: 5vh;
+  }
+  .card{
+    padding: 0;
+    margin-top: 3vh;
+  }
+  .cardwrap{
+    width: 88vw;
+    text-align: center;
+    padding-left: 10%;
+    margin-bottom: 1vh;
+  }
+  .inner{
+    height: 300px;
+    width: 300px;
+  }
+  .inner img{
+    height: 200px;
+    width: 200px;
+    margin-left: 25px;
+    margin-top: 15px;
+  }
+  .strech img{
+    width: 250px;
+    margin-left: 10px;
+  }
+  #reward{
+    height: auto;
+  }
+  .reText{
+    width: 70vw;
+    margin-left: 15vw;
+    margin-top: 0;
+  }
+  .reImg{
+    width: 90vw;
+    margin-top: 15vh;
+    height: 35vh;
+  }
+  #MobileApp{
+    margin-top: 0;
+    height: auto;
+  }
+  .mobileText{
+    width: 98vw;
+    height: 30vh;
+    padding-top: 10vh;
+  }
+  .mobileImg{
+    width: 98vw;
+    height: auto;
+    padding-top: 5vh;
+  }
+  .mobileImg img{
+    height: 350px;
+    width: 350px;
+    margin-left: 10vw;
+  }
+  #account{
+    padding-bottom: 2vh;
+    height: auto;
+  }
+  .accCard{
+    height: auto;
+    padding-left: 5vw;
+  }
+  .accCardWrap{
+    width: 90vw;
+    height: auto;
+    padding-left: 10vw;
+    margin-bottom: 3vh;
+  }
+}

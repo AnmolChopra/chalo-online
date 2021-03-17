@@ -1,0 +1,149 @@
+<div *ngIf="MsgStat == true">
+  {{Msg}}
+</div>
+<div class="body" >
+  <h1>Details</h1>
+  <div class="det">
+    <label for="">Id : </label>
+    <label for="">{{id}}</label><br>
+    <label for="">Name : </label>
+    <label for="">{{name}}</label><br>
+    <label for="">Mobile : </label>
+    <label for="">{{mobile}}</label><br>
+    <label for="">E-mail : </label>
+    <label for="">{{email}}</label><br>
+    <label for="">Sponser Name : </label>
+    <label for="">{{sponserName}}</label>
+    <label for="">Intreset : </label>
+    <mat-form-field>
+      <mat-label>Select option</mat-label>
+      <select matNativeControl (change)="int($event.target.value)">
+        <option  disabled> </option>
+        <option  value="true">Interseted</option>
+        <option  value="false">Not Interseted</option>
+      </select>
+    </mat-form-field>
+  </div>
+  <div *ngIf="callStat == false">
+    <h1>Calling Process</h1>
+    <form [formGroup]="call" (ngSubmit)="callForm()">
+        <label for="">1. Good Morning/ Good After Noon/ Good Evening [Sir/Ma'am]</label><br>
+        <label for="">2. I am calling DASH BACK. Main DASH BACK ki taraf se baat kr rahi hu</label><br>
+        <label for="">3. Sir are you comfortable in </label>
+        <mat-form-field>
+            <mat-label>Language</mat-label>
+            <select matNativeControl (change)="lang($event.target.value)" formControlName="language">
+              <option value="" selected></option>
+              <option  value="eng">English</option>
+              <option  value="hi">Hindi</option>
+            </select>
+          </mat-form-field><br>
+        <div *ngIf="eng == true">
+          <label for="">4. Am I taking to Mr./Miss {{name}} </label><br>
+          <label for="">5. Sir/Ma'am have you received your ID and Password on your mail</label><br>
+          <mat-form-field>
+              <mat-label>Select option</mat-label>
+              <select matNativeControl formControlName="mailR">
+                <option value="" selected></option>
+                <option  value="yes">Yes</option>
+                <option  value="no">no</option>
+              </select>
+            </mat-form-field><br>
+          <label for="">6. Have you Logged in & check your DASH BACK A/C</label><br>
+          <mat-form-field>
+              <mat-label>Select option</mat-label>
+              <select matNativeControl (change)="Opt6($event.target.value)" formControlName="login">
+                <option value="" selected></option>
+                <option  value="yes"> Yes</option>
+                <option  value="no"> No</option>
+              </select>
+            </mat-form-field><br>
+          <label for="" *ngIf="Option6 == true" class="ans">Ans: Sir Please LogIn & Check your account</label><br>
+          <label for="">7. If you face any problem please call on helpline number & contact for same.</label><br>
+          <label for="">8. Can I know that from where you came to know about Dash</label>
+          <input matInput type="text" placeholder="Please enter value" fromControlName="platform"><br>
+          <label for="">9. Do you know about DASH BACK or do you have any query</label><br>
+          <mat-form-field>
+              <mat-label>Select option</mat-label>
+              <select matNativeControl (change)="Opt9($event.target.value)" formControlName="queryT">
+                <option value="" selected></option>
+                <option  value="yes"> Yes</option>
+                <option  value="no"> No</option>
+                <option value="query">Query</option>
+              </select>
+            </mat-form-field><br>
+          <input matInput type="text" placeholder="Please Enter query" *ngIf="query9 == true" fromControlName="query"><br>
+          <label for="">10. Sir Do You Know How to refer your friends or any one else</label>
+          <mat-form-field>
+              <mat-label>Select option</mat-label>
+              <select matNativeControl (change)="Opt10($event.target.value)" formControlName="referF">
+                <option value="" selected></option>
+                <option  value="yes"> Yes</option>
+                <option  value="no"> No</option>
+              </select>
+            </mat-form-field><br>
+          <label for="" *ngIf="Option10 == true" class="ans">Ans: After logging in to your A/C on DASH BACK. CLick on the menu then you will see the option send free link <br>
+          after clicking on the option you will see a link copy that and share to whomsoever you want</label><br>
+          <label for="">11. Sir in future if you have any kind of problem you can contact the helpline number mention on the dashboard.</label><br>
+          <label for="">Thank you Sir/Ma'am </label><br>
+          <label for="">Have a nice day ahead</label>
+        </div>
+        <div *ngIf ="hindi == true">
+          <label for="">4. kya  main {{name}} se bt kr rahi hu</label><br>
+          <label for="">5. sir kya aapko  aapka I'd or password  e.mail   ke through  mil chuka h</label><br>
+          <mat-form-field>
+              <mat-label>Select option</mat-label>
+              <select matNativeControl formControlName="mailR">
+                <option value="" selected></option>
+                <option  value="yes">Yes</option>
+                <option  value="no">no</option>
+              </select>
+            </mat-form-field><br>
+          <label for="">6. sir  aap pls apna account logging kr ke dekha h</label><br>
+          <mat-form-field>
+              <mat-label>Select option</mat-label>
+              <select matNativeControl (change)="Opt6($event.target.value)" formControlName="login">
+                <option value="" selected></option>
+                <option  value="yes"> Yes</option>
+                <option  value="no"> No</option>
+              </select>
+            </mat-form-field><br>
+          <label for="" *ngIf="Option6 == true" class="ans">Ans:Sir log in krke check kre</label><br>
+          <label for="">7. sir ager aap ko koi problem hoti  h  to aap hamari helpline number pr call  kr sakte h  ya fir aap  isi  number pr call  kr sakte h</label><br>
+          <label for="">8. sir kya main jaan sakti hu Ki aap ko dash  back  ke bare  m kahan  se pata  chla</label>
+          <input matInput type="text" placeholder="Please enter value" fromControlName="platform"><br>
+          <label for="">9. sir aap ko dash back ke bare  m pta h</label><br>
+          <mat-form-field>
+              <mat-label>Select option</mat-label>
+              <select matNativeControl (change)="Opt9($event.target.value)" formControlName="queryT">
+                <option value="" selected></option>
+                <option  value="yes"> Yes</option>
+                <option  value="no"> No</option>
+                <option value="query">Query</option>
+              </select>
+            </mat-form-field><br>
+          <input matInput type="text" placeholder="Please Enter query" *ngIf="query9 == true" fromControlName="query"><br>
+          <label for="">10. sir aap ne welcome e.mail  ke sath bheje hue document  dekh  liye h</label><br>
+          <mat-form-field>
+              <mat-label>Select option</mat-label>
+              <select matNativeControl (change)="Opt10($event.target.value)" formControlName="referF">
+                <option value="" selected></option>
+                <option  value="yes"> Yes</option>
+                <option  value="no"> No</option>
+              </select>
+            </mat-form-field><br>
+          <label for="" *ngIf="Option10 == true" class="ans">Ans:  sir pls aap ek br document dekh lijiye</label><br>
+          <label for="">11. sir ager aap ko future m koi bhi query  ho to aap hamri  helpline number pr call kr sakte ho  jo hamre  dash board  m maintion  h</label><br>
+          <label for="">Thank you Sir/Ma'am </label><br>
+          <label for="">Have a nice day ahead</label>
+        </div>
+        <button mat-raised-button color="primary" type="submit" >Sumbit</button>
+    </form>
+  </div>
+  <div *ngIf="callStat == true && stat == false">
+    <button mat-raised-button color="primary" (click)="acc()">Open Account</button>
+  </div>
+  <div *ngIf="stat == true" class="up">
+    <Span>Form Already Uploaded</Span>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="body">
+  <div class="head">
+      <h1>Payout</h1>
+  </div>
+  <div class="tablef">
+      <table>
+          <tr class="tableHead">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Password</th>
+              <th>Sponser ID</th>
+              <th>Sponser Name</th>
+          </tr>
+          <tr class="tablec" *ngFor="let r of resData">
+              <th>{{r.id}}</th>
+              <th>{{r.name}}</th>
+              <th>{{r.mobile}}</th>
+              <th>{{r.email}}</th>
+              <th>{{r.sponserId}}</th>
+              <th>{{r.sponserName}}</th>
+          </tr>
+      </table>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="body">
+    <div class="form">
+        <div>
+            <form [formGroup]='login' (ngSubmit)='loginf()'>
+              <mat-form-field>
+                <input matInput type="text" placeholder="Type your Mobile No." formControlName='mobile'> 
+              </mat-form-field><br>
+              <mat-form-field>
+                <input matInput type="password" placeholder="Type your Password" formControlName='password'> 
+              </mat-form-field><br>
+                <button mat-button type="submit">Login</button> <br>
+                <label (click)='Forgot()'>Forgot Password</label>
+            </form>
+            
+            <span>{{Msg}}</span>
+        </div>
+        <!-- <div>
+            <form [formGroup]='changePass' (ngSubmit)='change()'>
+                <div>
+                    <input type="text" placeholder="Enter OTP Sent To Your Email"> <br>
+                    <button (click)='otp()'>Submit</button>
+                </div>
+                <div>
+                    <input type="password" placeholder="Enter New password"> <br>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div> -->
+    </div>
+  </div>

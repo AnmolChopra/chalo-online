@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "http://payment.hashtagplanners.in",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

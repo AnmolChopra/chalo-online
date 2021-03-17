@@ -1,0 +1,25 @@
+<div class="body">
+  <div class="head">
+      <h4>My Direct</h4>
+  </div>
+  <div class="tablef">
+      <table>
+          <tr class="tableHead">
+              <th>Id</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Joining Date</th>
+              <!-- <th>Package</th> -->
+              <th>Account Status</th>
+          </tr>
+          <tr class="tablec" *ngFor="let r of resData">
+              <th>{{r.id}}</th>
+              <th>{{r.name || 0}}</th>
+              <th>{{r.mobile || 0}}</th>
+              <th>{{r.joiningDate | date:'dd MMM yyyy hh:mm'}}</th>
+              <!-- <th>{{r.package|| 0}}</th> -->
+              <th>{{r.status || 0}}</th>
+          </tr>
+      </table>
+  </div>
+</div>

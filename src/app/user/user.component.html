@@ -1,0 +1,99 @@
+<div class="body">
+    <mat-drawer-container class="example-container" autosize>
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <span><h1 style="font-size: x-large; text-align: center; font-weight: bold;">CHALO ONLINE</h1> </span>
+                <span class="example-spacer"></span>
+                <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">account_circle</mat-icon> -->
+                <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon" (click)="drawer.toggle()">menu</mat-icon>
+              </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-drawer #drawer class="example-sidenav" mode="over">
+            <div class="pro" >
+                <!-- <h3 >{{name || 'Anmol Kumar Chopra'}}</h3>
+                <h5 >{{mobile || '9711855888'}}</h5> -->
+                <mat-grid-list cols="3" rowHeight="50px">
+                    <!-- <mat-grid-tile
+                        colspan="1"
+                        rowspan="2" class="img">
+                      <img src="../../assets/logo1.png" alt="">
+                    </mat-grid-tile> -->
+                    <mat-grid-tile
+                    colspan="2"
+                    rowspan="1" (click)="profile()">
+                    <h4 >{{name || 'Anmol Kumar Chopra'}}</h4>
+                    </mat-grid-tile>
+                    <mat-grid-tile
+                    colspan="2"
+                    rowspan="1" (click)="profile()">
+                    <h5 >{{mobile || '9711855888'}}</h5>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+            </div>
+            <div class="cont">
+                <button mat-button routerLink='dashboard' (click)="rest();drawer.toggle()">
+                    <mat-icon>dashboard</mat-icon>
+                    <span >Dashboard</span>
+                </button> <br>
+            
+                <button mat-button routerLink='link'(click)="rest();drawer.toggle()">
+                    <mat-icon>insert_link</mat-icon>
+                    <span >Send Free Link</span>
+                </button><br>
+                <button mat-button routerLink='activate' class="act" (click)="rest();drawer.toggle()">
+                    <mat-icon>school</mat-icon>
+                    <span >Activate Now</span>
+                </button><br>
+                <button mat-button (click)="teamC()">
+                    <mat-icon>group</mat-icon>
+                    <span >Team</span>
+                </button><br>
+                <div class="drop" *ngIf="team == true">
+                    <button mat-button routerLink='my-Direct' (click)="drawer.toggle()">
+                        <mat-icon>folder_shared</mat-icon>
+                        <span >My Direct</span>
+                    </button><br>
+                    <button mat-button routerLink='my-Team' (click)="drawer.toggle()">
+                        <mat-icon>group</mat-icon>
+                        <span >My Team</span>
+                    </button>
+                </div>
+                <button mat-button (click)="incomeC()">
+                    <mat-icon>emoji_events</mat-icon>
+                    <span >Income</span>
+                </button><br>
+                <div class="drop" *ngIf="income == true">
+                    <button mat-button routerLink='income/level_income' (click)="drawer.toggle();">
+                        <mat-icon>apartment</mat-icon>
+                        <span>Referal Income</span>
+                    </button><br>
+                    <button mat-button routerLink='income/brokerage_income' (click)="drawer.toggle()" disabled>
+                        <mat-icon>business_center</mat-icon>
+                        <span>Bonus Income</span>
+                    </button><br>
+                    <button mat-button routerLink='income/rewards' disabled>
+                        <mat-icon>local_bar</mat-icon>
+                        <span>Rewards Club</span>
+                    </button><br>
+                    <button mat-button routerLink='income/leadership_club' disabled>
+                        <mat-icon>emoji_people</mat-icon>
+                        <span>Leadership Club</span>
+                    </button>
+                </div>
+                <button mat-button routerLink='payment_history' (click)="rest();drawer.toggle()">
+                    <mat-icon>assignment</mat-icon>
+                    <span >Payment History</span>
+                </button><br>
+                <button mat-button routerLink='contact_us' (click)="rest();drawer.toggle()">
+                    <mat-icon>local_phone</mat-icon>
+                    <span >Contact Us</span>
+                </button><br>
+                <button mat-button  (click)="signOut()" class="logout">
+                    <mat-icon>login</mat-icon>
+                    <span >Logout</span>
+                </button><br>
+            </div>
+        </mat-drawer>
+        <router-outlet></router-outlet> 
+      </mat-drawer-container>
+</div>

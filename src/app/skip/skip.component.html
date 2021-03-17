@@ -1,0 +1,12 @@
+<div>
+  <div>
+    <h1>SKIP</h1>
+  </div>
+  <div>
+    <form [formGroup]="skip" (ngSubmit)='sub()'>
+      <input matInput type="tel" formControlName='no'>
+      <button mat-button type="submit" [disabled]="!skip.valid">Submit</button>
+    </form>
+    <span>{{Msg}}</span>
+  </div>
+</div>
