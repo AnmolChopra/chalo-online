@@ -9,12 +9,14 @@
                 <th>Name</th>
                 <th>Phone</th>
                 <th>Password</th>
+                <th>Activate</th>
             </tr>
             <tr class="tablec" *ngFor="let r of resData">
                 <th>{{r.id}}</th>
                 <th>{{r.name}}</th>
                 <th>{{r.mobile}}</th>
-                <th>Null{{r.password}}</th>
+                <th>{{r.password}}</th>
+                <th><button (click)=activ(r.mobile) >Activate</button></th>
             </tr>
         </table>
     </div>

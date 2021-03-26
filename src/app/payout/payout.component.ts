@@ -24,8 +24,8 @@ export class PayoutComponent implements OnInit {
   }
   activate(){
     this.act = this.fb.group({
-      'amt' : ['',Validators.required],
-      'mobile' : ['']
+      'mobile' : [''],
+
     })
   }
   activ(id){
@@ -34,10 +34,8 @@ export class PayoutComponent implements OnInit {
    var formData = this.act.getRawValue();
    var serilize = formData;
    console.log(serilize);
-   this.bs.payout(serilize).subscribe((res)=>{
+   this.bs.updatePkg(serilize).subscribe((res)=>{
      console.log(res);
-     this.fetch();
-     this.act.reset();
    })
   }
   delete(_id){
@@ -47,5 +45,4 @@ export class PayoutComponent implements OnInit {
       this.fetch();
     })
   }
-
 }
